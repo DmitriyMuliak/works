@@ -1,0 +1,167 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$pay1-name: 'pay1';
+$pay1-x: 372px;
+$pay1-y: 0px;
+$pay1-offset-x: -372px;
+$pay1-offset-y: 0px;
+$pay1-width: 58px;
+$pay1-height: 40px;
+$pay1-total-width: 494px;
+$pay1-total-height: 40px;
+$pay1-image: 'sprite-pay.png';
+$pay1: (372px, 0px, -372px, 0px, 58px, 40px, 494px, 40px, 'sprite-pay.png', 'pay1', );
+$pay2-name: 'pay2';
+$pay2-x: 435px;
+$pay2-y: 0px;
+$pay2-offset-x: -435px;
+$pay2-offset-y: 0px;
+$pay2-width: 59px;
+$pay2-height: 40px;
+$pay2-total-width: 494px;
+$pay2-total-height: 40px;
+$pay2-image: 'sprite-pay.png';
+$pay2: (435px, 0px, -435px, 0px, 59px, 40px, 494px, 40px, 'sprite-pay.png', 'pay2', );
+$pay3-name: 'pay3';
+$pay3-x: 0px;
+$pay3-y: 0px;
+$pay3-offset-x: 0px;
+$pay3-offset-y: 0px;
+$pay3-width: 57px;
+$pay3-height: 40px;
+$pay3-total-width: 494px;
+$pay3-total-height: 40px;
+$pay3-image: 'sprite-pay.png';
+$pay3: (0px, 0px, 0px, 0px, 57px, 40px, 494px, 40px, 'sprite-pay.png', 'pay3', );
+$pay4-name: 'pay4';
+$pay4-x: 62px;
+$pay4-y: 0px;
+$pay4-offset-x: -62px;
+$pay4-offset-y: 0px;
+$pay4-width: 57px;
+$pay4-height: 40px;
+$pay4-total-width: 494px;
+$pay4-total-height: 40px;
+$pay4-image: 'sprite-pay.png';
+$pay4: (62px, 0px, -62px, 0px, 57px, 40px, 494px, 40px, 'sprite-pay.png', 'pay4', );
+$pay5-name: 'pay5';
+$pay5-x: 124px;
+$pay5-y: 0px;
+$pay5-offset-x: -124px;
+$pay5-offset-y: 0px;
+$pay5-width: 57px;
+$pay5-height: 40px;
+$pay5-total-width: 494px;
+$pay5-total-height: 40px;
+$pay5-image: 'sprite-pay.png';
+$pay5: (124px, 0px, -124px, 0px, 57px, 40px, 494px, 40px, 'sprite-pay.png', 'pay5', );
+$pay6-name: 'pay6';
+$pay6-x: 186px;
+$pay6-y: 0px;
+$pay6-offset-x: -186px;
+$pay6-offset-y: 0px;
+$pay6-width: 57px;
+$pay6-height: 40px;
+$pay6-total-width: 494px;
+$pay6-total-height: 40px;
+$pay6-image: 'sprite-pay.png';
+$pay6: (186px, 0px, -186px, 0px, 57px, 40px, 494px, 40px, 'sprite-pay.png', 'pay6', );
+$pay7-name: 'pay7';
+$pay7-x: 248px;
+$pay7-y: 0px;
+$pay7-offset-x: -248px;
+$pay7-offset-y: 0px;
+$pay7-width: 57px;
+$pay7-height: 40px;
+$pay7-total-width: 494px;
+$pay7-total-height: 40px;
+$pay7-image: 'sprite-pay.png';
+$pay7: (248px, 0px, -248px, 0px, 57px, 40px, 494px, 40px, 'sprite-pay.png', 'pay7', );
+$pay8-name: 'pay8';
+$pay8-x: 310px;
+$pay8-y: 0px;
+$pay8-offset-x: -310px;
+$pay8-offset-y: 0px;
+$pay8-width: 57px;
+$pay8-height: 40px;
+$pay8-total-width: 494px;
+$pay8-total-height: 40px;
+$pay8-image: 'sprite-pay.png';
+$pay8: (310px, 0px, -310px, 0px, 57px, 40px, 494px, 40px, 'sprite-pay.png', 'pay8', );
+$spritesheet-width: 494px;
+$spritesheet-height: 40px;
+$spritesheet-image: 'sprite-pay.png';
+$spritesheet-sprites: ($pay1, $pay2, $pay3, $pay4, $pay5, $pay6, $pay7, $pay8, );
+$spritesheet: (494px, 40px, 'sprite-pay.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

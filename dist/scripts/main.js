@@ -1,0 +1,1 @@
+$(function(){$(".carousel").carousel({interval:!1}),$(".search-hide").on("click",function(){$(".main-menu .navbar-right").slideToggle()}),$("#elastislide").elastislide({minItems:2})});
