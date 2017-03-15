@@ -1,0 +1,433 @@
+/*
+$breakpoints: (
+	"phone":        320px,
+	"phone-wide":   480px,
+	"phablet":      560px,
+	"tablet-small": 640px,
+	"tablet":       768px,
+	"tablet-medium":992px,//.container{ width:970px}
+	"tablet-wide":  1024px,
+	"desktop":      1254px,//1232px
+	"desktop-wide": 1440px
+);
+*/
+
+
+*{
+	margin:0;
+	padding: 0;
+	outline:0;
+	border:0;
+}
+
+html{
+	font-size:18px;
+}
+
+body, html { 
+	width: 100%;
+	height: 100%;
+
+	font-size: 18px;
+	color:white;
+}
+
+article,section{
+/* 	height: 100%;
+	width: 100%; */
+
+	@include mq('tablet-medium'){
+		height: 100%;
+		width: 100%;
+	}
+}
+
+section{
+	overflow:hidden;
+}
+
+img{
+	max-width:100%;
+	height:auto;
+}
+
+h1,h2,h3,h4{
+	font-family: 'Dancing Script', cursive;
+}
+
+h1{
+	font-size:2em;
+}
+
+h2{
+	font-size:1.8em;
+}
+
+h3{
+	font-size:1.5em;
+}
+
+p{
+	margin-bottom:10px;
+}
+
+a{
+	text-decoration: none;
+}
+
+ul li{
+	list-style:none;
+}
+
+.clearfix {
+	&:after{
+		content:" ";
+		display:table;
+		clear:both;
+	}
+}
+
+.one-half{
+	box-sizing: border-box;
+	width: 100%;
+	padding:10px 16px;
+
+	@include mq('tablet-medium'){
+		padding:15px;
+		width: 50%;
+		float: left;
+	}
+}
+
+.one-third{
+	box-sizing: border-box;
+	width: 100%;
+	padding:10px;
+		@include mq('tablet-medium'){
+		padding:15px;
+		width: 33.3333%;
+		float: left;
+	}
+}
+
+.accordion_inner-item{
+	display: none;
+}
+.accordion_inner-item.active{
+	display: block;
+}
+
+.container{
+	max-width:1200px;
+	margin:0 auto;
+	padding-top: 100px;
+
+	@include mq('desktop'){
+		padding-top: 170px;
+	}
+	&:after{
+		content:" ";
+		display:table;
+		clear:both;
+	}
+}
+
+.relativ-pos{
+	position: relative;
+}
+
+.txt-center {
+	text-align:center;
+}
+
+.arrow{
+	font-size:2.2em;
+	position: relative;
+	animation:move 1.4s infinite alternate;
+}
+
+@keyframes move{
+	0%{
+		top:20px;
+		color:#176780;
+	}
+	50%{
+		color:#05A89D;
+	}
+	100%{
+		top:0;
+		color:#176780;
+	}
+}
+/* ============================================================
+			Header
+=============================================================== */
+header{
+	width: 100%;
+	height:70px;
+	position: fixed;
+	z-index: 1;
+
+	@include mq('tablet-small'){
+		background-color: $black-transparent;
+	}
+}
+
+	nav ul{
+
+		@include mq('tablet-small'){
+			margin: 0 5%;
+		}
+
+		a{
+			text-transform: uppercase;
+		}
+
+	}
+
+	nav li{
+	border-right: 1px solid #fff;
+	box-sizing: border-box;
+	background-color: $black-transparent;
+
+	@include mq('tablet-small'){
+		background-color: initial;
+	}
+
+	list-style: none;
+	float: left;
+	text-align: center;
+	width: 33.33333%;
+
+	@include mq('tablet-small'){
+		width: 16.66667%;
+	}
+
+	&:first-child{
+		border-left: 1px solid #fff;
+	}
+
+	&:hover{
+		color:#fff;
+
+		@include mq('tablet-small'){
+			background:lighten(#37474f,15%);
+		}
+
+		a{
+			color: #fff;
+		}
+}
+
+
+	&:nth-child(2).active{
+		background-color: $section2-bg-color;
+	}
+
+	&:nth-child(3).active{
+		background-color: $section3-bg-color;
+	}
+
+	&:nth-child(4).active{
+		background-color: $section4-bg-color;
+	}
+
+	&:nth-child(5).active{
+		background-color: $section5-bg-color;
+	}
+
+	&:nth-child(6).active{
+		background-color: $section6-bg-color;
+	}
+
+
+	a{
+		color:white;
+		font-size:0.9em;
+		width: 100%;
+		display: inline-block;
+		padding: 12px 0;
+
+		@include mq('tablet-small'){
+			font-size:1.1em;
+			padding: 24px 0;
+		}
+	}
+}
+
+/* ============================================================
+			Main
+=============================================================== */
+
+section{
+	position: relative;
+}
+
+/* 												Section 1
+=============================================================== */
+
+.section1{
+	background: $section1-bg-color;
+	color:#176780;
+	font-size:0.9em;
+
+	@include mq('desktop'){
+		font-size:1.1em;
+	}
+
+	img{
+
+		&::selection {
+			color: transparent;
+		}
+
+	}
+}
+
+/* 												Section 2
+=============================================================== */
+.section2{
+	background: $section2-bg-color;
+	text-align:center;
+	font-size:0.9em;
+
+	@include mq('desktop'){
+		font-size:1em;
+		text-align:initial;
+	}
+
+	h2{
+		text-align:center;
+		margin-bottom:15px;
+	}
+
+	.container{
+		position: relative;
+
+		@include mq('tablet-medium'){
+			padding-top: 0;
+			position: absolute;//relative for toggle btn
+			width: 100%;
+			max-width: 1200px;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+
+		.one-half{
+			width: 100%;
+
+			@include mq('desktop'){
+				width: 50%;
+				float: left;
+			}
+		}
+
+		.one-half:last-child{
+			padding-top:0;
+
+			@include mq('desktop'){
+				padding-top:110px;
+			}
+
+			li{
+				padding-bottom:15px;
+			}
+		}
+	}
+
+}
+
+/* 												Section 3
+=============================================================== */
+.section3{
+	background: $section3-bg-color;
+}
+
+/* 												Section 4
+=============================================================== */
+.section4{
+	background: $section4-bg-color;
+
+	h2{
+		margin-bottom:15px;
+		text-align:center;
+	}
+
+	a{
+		color: #451c8e;
+	}
+
+	.accordion_list{
+		max-width: 570px;
+		margin: 0 auto;
+
+		@include mq('tablet-wide'){
+			max-width: initial;
+			margin: initial;
+		}
+
+	}
+
+	.accordion_item{
+		margin-bottom: 5px;
+	}
+
+	.accordion_trigger{
+		transition:all 0.3s;
+		&:hover{
+			color:#009688;
+		}
+	}
+
+}
+
+/* 												Section 5
+=============================================================== */
+.section5{
+	background: $section5-bg-color;
+}
+
+/* 												Section 6
+=============================================================== */
+.section6{
+	background: $section6-bg-color;
+
+	img{
+		border-radius:50%;
+	}
+
+	h1{
+		margin-bottom: 40px;
+	}
+
+	h3{
+		margin-bottom: 10px;
+	}
+
+	.person{
+		max-width: 570px;
+		margin: 15px auto 0;
+
+		@include mq('tablet-wide'){
+			max-width: initial;
+			margin: initial;
+		}
+
+	}
+
+	.footer-text{
+		font-size: 0.9em;
+		margin: 20px 10px 0 10px;
+
+		@include mq('desktop'){
+			font-size: 1.1em;
+			margin: 40px 10px 0 10px;
+		}
+	}
+
+	.contact a{
+		color: #05a89d;
+	}
+
+}
