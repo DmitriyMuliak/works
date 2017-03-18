@@ -1,4 +1,4 @@
-# Landig with foto
+# Landing with foto
 
 ## For correctly display page
 
