@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Acrom-ExtraBold';
+  src: url('/fonts/acromExb/Acrom-ExtraBold.eot');
+  src: url('/fonts/acromExb/Acrom-ExtraBold.woff2') format('woff2'),
+       url('/fonts/acromExb/Acrom-ExtraBold.woff') format('woff'),
+       url('/fonts/acromExb/Acrom-ExtraBold.ttf') format('truetype'),
+       url('/fonts/acromExb/Acrom-ExtraBold.svg#Acrom-ExtraBold') format('svg'),
+       url('/fonts/acromExb/Acrom-ExtraBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Acrom-Light';
+  src: url('/fonts/acromL/Acrom-Light.eot');
+  src: url('/fonts/acromL/Acrom-Light.woff2') format('woff2'),
+       url('/fonts/acromL/Acrom-Light.woff') format('woff'),
+       url('/fonts/acromL/Acrom-Light.ttf') format('truetype'),
+       url('/fonts/acromL/Acrom-Light.svg#Acrom-ExtraBold') format('svg'),
+       url('/fonts/acromL/Acrom-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
